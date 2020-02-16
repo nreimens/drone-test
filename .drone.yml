@@ -1,0 +1,11 @@
+kind: pipeline
+name: run-build
+
+steps:
+- name: build
+  image: stronglytyped/arm-none-eabi-gcc
+  commands:
+  - cd build
+  - ln -s /work/gcc-arm-none-eabi-8-2019-q3-update/ /usr/local/gcc-arm
+  - make clean
+  - make
