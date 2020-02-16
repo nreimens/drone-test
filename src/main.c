@@ -3,6 +3,8 @@
 
 #define LED_PIN NRF_GPIO_PIN_MAP(0,11)
 
+// Testing comment
+
 int main(void)
 {
     nrfx_systick_init();
