@@ -1,11 +1,6 @@
 kind: pipeline
 name: run-build
 
-notify:
-- name: slack
-  image: plugins/slack
-  settings:
-
 steps:
 - name: submodules
   image: alpine/git
