@@ -2,6 +2,11 @@ kind: pipeline
 name: run-build
 
 steps:
+- name: submodules
+  image: alpine/git
+  commands:
+  - git submodule update --init --recursive
+
 - name: build
   image: stronglytyped/arm-none-eabi-gcc
   commands:
