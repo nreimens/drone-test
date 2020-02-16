@@ -1,6 +1,11 @@
 kind: pipeline
 name: run-build
 
+notify:
+- name: slack
+  image: plugins/slack
+  settings:
+
 steps:
 - name: submodules
   image: alpine/git
@@ -14,3 +19,10 @@ steps:
   - ln -s /work/gcc-arm-none-eabi-8-2019-q3-update/ /usr/local/gcc-arm
   - make clean
   - make
+
+- name: slack
+  image: plugins/slack
+  settings:
+    webhook: https://hooks.slack.com/services/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
+  when:
+    status: [ success, failure ]
