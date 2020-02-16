@@ -14,3 +14,11 @@ steps:
   - ln -s /work/gcc-arm-none-eabi-8-2019-q3-update/ /usr/local/gcc-arm
   - make clean
   - make
+
+- name: slack
+  image: plugins/slack
+  settings:
+    webhook:
+      from_secret: slack_webhook
+  when:
+    status: [ success, failure ]
