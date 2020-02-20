@@ -2,7 +2,7 @@
 #include "nrf_gpio.h"
 
 #define LED_PIN NRF_GPIO_PIN_MAP(0,11)
-
+// hello
 int main(void)
 {
     nrfx_systick_init();
